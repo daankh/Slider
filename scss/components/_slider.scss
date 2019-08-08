@@ -38,7 +38,23 @@
 
         position: absolute;
         left: 50%;
-        bottom: 1rem;
-        transform: translateX(-50%)
+        bottom: 2rem;
+        transform: translateX(-50%);
+
+        display: flex;
+
+        .dot {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: transparent;
+            margin: 0 1rem;
+
+            box-shadow: 0 0 0 2px #fff;
+
+            &.active {
+                background-color: #ff6347;
+            }
+        }
     }
 }

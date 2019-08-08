@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // get elemenst
-    var slider = document.querySelector('.slider')
-    var prevPictureButton = slider.querySelector('.btn--prevPicture')
-    var nextPictureButton = slider.querySelector('.btn--nextPicture')
-    var images = slider.querySelectorAll('.slider__image-container')
-    // set variables
-    var imageNumber = 0
+    // functions
+    const createDots = function (images) {
+        images.forEach((image) => {
+            const dot = document.createElement('div')
+            dot.classList.add('dot')
+            dotsContainer.appendChild(dot)
+        })
+    }
 
-    //set initial img for slider
-    // images[imageNumber].classList.add('visible')
-
-    // events
-    nextPictureButton.addEventListener('click', function () {
+    const moveForward = function () {
         images[imageNumber].classList.add('hidden')
+        dots[imageNumber].classList.remove('active')
 
         imageNumber++
 
@@ -21,10 +19,50 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         images[imageNumber].classList.remove('hidden')
+        dots[imageNumber].classList.add('active')
+    }
+
+    // get elemenst
+    const slider = document.querySelector('.slider')
+    const prevPictureButton = slider.querySelector('.btn--prevPicture')
+    const nextPictureButton = slider.querySelector('.btn--nextPicture')
+    const images = slider.querySelectorAll('.slider__image-container')
+    const dotsContainer = slider.querySelector('.slider__dots')
+    createDots(images)
+    const dots = slider.querySelectorAll('.dot')
+    // set variables
+    let imageNumber = 0
+
+    //set initial img for slider
+    // images[imageNumber].classList.add('visible')
+    dots[imageNumber].classList.add('active')
+
+    let interval = setInterval(moveForward, 3000)
+
+    // events
+    nextPictureButton.addEventListener('click', function () {
+        clearInterval(interval)
+
+        images[imageNumber].classList.add('hidden')
+        dots[imageNumber].classList.remove('active')
+
+        imageNumber++
+
+        if (imageNumber > images.length - 1) {
+            imageNumber = 0
+        }
+
+        images[imageNumber].classList.remove('hidden')
+        dots[imageNumber].classList.add('active')
+
+        interval = setInterval(moveForward, 3000)
     })
 
     prevPictureButton.addEventListener('click', function () {
+        clearInterval(interval)
+
         images[imageNumber].classList.add('hidden')
+        dots[imageNumber].classList.remove('active')
 
         imageNumber--
 
@@ -34,5 +72,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         images[imageNumber].classList.remove('hidden')
+        dots[imageNumber].classList.add('active')
+
+        interval = setInterval(moveForward, 3000)
     })
+
+
 })
