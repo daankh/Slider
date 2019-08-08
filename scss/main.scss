@@ -1,3 +1,8 @@
 @import './vendors/normalize';
 
-@import './abstracts/reset';
+@import './base/reset';
+@import './base/utilities';
+@import './base/base';
+
+@import './components/button';
+@import './components/slider'
