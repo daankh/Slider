@@ -7,43 +7,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Simple Sass and JavaScript slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <div class="slider">
-        <ul class="slider__container">
-            <li class="slider__image">
-                <picture class="picture">
-                    <source media="(min-width: 1280px)" srcset="./img/lion_1920.jpg">
-                    <source media="(min-width: 640px)" srcset="./img/lion_1280.jpg">
-                    <img src="./img/lion_640.jpg" alt="lion" style="width:auto;">
-                </picture>
-            </li>
-            <li class="slider__image">
-                <picture class="picture">
-                    <source media="(min-width: 1280px)" srcset="./img/wolf_1920.jpg">
-                    <source media="(min-width: 640px)" srcset="./img/wolf_1280.jpg">
-                    <img src="./img/wolf_640.jpg" alt="lion" style="width:auto;">
-                </picture>
-            </li>
-            <li class="slider__image">
-                <picture class="picture">
-                    <source media="(min-width: 1280px)" srcset="./img/nature_1920.jpg">
-                    <source media="(min-width: 640px)" srcset="./img/nature_1280.jpg">
-                    <img src="./img/nature_640.jpg" alt="lion" style="width:auto;">
-                </picture>
-            </li>
-            <li class="slider__image">
-                <picture class="picture">
-                    <source media="(min-width: 1280px)" srcset="./img/scorpion_1920.jpg">
-                    <source media="(min-width: 640px)" srcset="./img/scorpion_1280.jpg">
-                    <img src="./img/scorpion_640.jpg" alt="lion" style="width:auto;">
-                </picture>
-            </li>
-        </ul>
-        <button id="prevPicture">Prev</button>
-        <button id="nextPicture">Next</button>
+    <div class="container">
+        <div class="slider">
+            <ul class="slider__container">
+                <li class="slider__image-container">
+                    <picture class="picture">
+                        <source media="(min-width: 1280px)" srcset="./img/lion_1920.jpg">
+                        <source media="(min-width: 640px)" srcset="./img/lion_1280.jpg">
+                        <img src="./img/lion_640.jpg" alt="lion">
+                    </picture>
+                </li>
+                <li class="slider__image hidden">
+                    <picture class="picture">
+                        <source media="(min-width: 1280px)" srcset="./img/wolf_1920.jpg">
+                        <source media="(min-width: 640px)" srcset="./img/wolf_1280.jpg">
+                        <img src="./img/wolf_640.jpg" alt="lion">
+                    </picture>
+                </li>
+                <li class="slider__image hidden">
+                    <picture class="picture">
+                        <source media="(min-width: 1280px)" srcset="./img/nature_1920.jpg">
+                        <source media="(min-width: 640px)" srcset="./img/nature_1280.jpg">
+                        <img src="./img/nature_640.jpg" alt="lion">
+                    </picture>
+                </li>
+                <li class="slider__image hidden">
+                    <picture class="picture">
+                        <source media="(min-width: 1280px)" srcset="./img/scorpion_1920.jpg">
+                        <source media="(min-width: 640px)" srcset="./img/scorpion_1280.jpg">
+                        <img src="./img/scorpion_640.jpg" alt="lion">
+                    </picture>
+                </li>
+            </ul>
+            <button class="btn btn--slider btn--prevPicture">
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </button>
+            <button class="btn btn--slider btn--nextPicture">
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </button>
+            <div class="dots">
+
+            </div>
+        </div>
     </div>
 
     <script src="js/app.js"></script>
