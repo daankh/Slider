@@ -12,13 +12,35 @@
 
 <body>
     <div class="slider">
-        <ul>
-            <li><img src="images/1.jpeg"></li>
-            <li><img src="images/2.jpeg"></li>
-            <li><img src="images/3.jpeg"></li>
-            <li><img src="images/4.jpeg"></li>
-            <li><img src="images/5.jpeg"></li>
-            <li><img src="images/6.jpeg"></li>
+        <ul class="slider__container">
+            <li class="slider__image">
+                <picture class="picture">
+                    <source media="(min-width: 1280px)" srcset="./img/lion_1920.jpg">
+                    <source media="(min-width: 640px)" srcset="./img/lion_1280.jpg">
+                    <img src="./img/lion_640.jpg" alt="lion" style="width:auto;">
+                </picture>
+            </li>
+            <li class="slider__image">
+                <picture class="picture">
+                    <source media="(min-width: 1280px)" srcset="./img/wolf_1920.jpg">
+                    <source media="(min-width: 640px)" srcset="./img/wolf_1280.jpg">
+                    <img src="./img/wolf_640.jpg" alt="lion" style="width:auto;">
+                </picture>
+            </li>
+            <li class="slider__image">
+                <picture class="picture">
+                    <source media="(min-width: 1280px)" srcset="./img/nature_1920.jpg">
+                    <source media="(min-width: 640px)" srcset="./img/nature_1280.jpg">
+                    <img src="./img/nature_640.jpg" alt="lion" style="width:auto;">
+                </picture>
+            </li>
+            <li class="slider__image">
+                <picture class="picture">
+                    <source media="(min-width: 1280px)" srcset="./img/scorpion_1920.jpg">
+                    <source media="(min-width: 640px)" srcset="./img/scorpion_1280.jpg">
+                    <img src="./img/scorpion_640.jpg" alt="lion" style="width:auto;">
+                </picture>
+            </li>
         </ul>
         <button id="prevPicture">Prev</button>
         <button id="nextPicture">Next</button>
