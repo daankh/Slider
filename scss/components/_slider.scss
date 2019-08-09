@@ -47,10 +47,10 @@
             margin: 0 1rem;
 
 
-            border: 2px solid #fff;
+            border: $dot-border;
 
             &.active {
-                background-color: #ff6347;
+                background-color: $color-dot;
             }
         }
     }

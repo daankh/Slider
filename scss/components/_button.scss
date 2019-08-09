@@ -11,16 +11,16 @@
         height: 100%;
         width: 8rem;
 
-        background-color: rgba(0, 0, 0, .1);
+        background-color: $color-button-bg;
         transition: background-color .3s;
 
         &:hover,
         &:active {
-            background-color: rgba(0, 0, 0, .5);
+            background-color: $color-button-bg-hover;
         }
 
         i {
-            color: #fff;
+            color: $color-button;
         }
     }
 
