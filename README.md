@@ -16,6 +16,7 @@ Full responsive slider built using JavaScript and Sass
 * Sass
 * HTML
 * Responsive Web Design
+* Responsive images
 * Gulp.js
 * NPM
 * Node.js
