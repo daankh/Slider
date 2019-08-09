@@ -54,4 +54,17 @@
             }
         }
     }
+
+    @media screen and (min-width: $desktop) {
+
+        &:hover {
+            .btn {
+
+                &--prevPicture,
+                &--nextPicture {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }

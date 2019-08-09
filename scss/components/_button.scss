@@ -7,7 +7,7 @@
         position: absolute;
         top: 50%;
         border: none;
-        font-size: 5rem;
+        font-size: 3rem;
         height: 100%;
         width: 8rem;
 
@@ -32,5 +32,29 @@
     &--nextPicture {
         right: 2rem;
         transform: translate(0, -50%);
+    }
+}
+
+
+@media screen and (min-width: $mobile) {
+    .btn {
+
+        &--slider {
+            font-size: 4rem;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .btn {
+        &--slider {
+            font-size: 5rem;
+        }
+
+        &--prevPicture,
+        &--nextPicture {
+            opacity: 0;
+            transition: opacity .3s;
+        }
     }
 }
