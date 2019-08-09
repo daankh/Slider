@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     // functions
+    const toggleClasses = function (imageNumber) {
+        images[imageNumber].classList.toggle('hidden')
+        dots[imageNumber].classList.toggle('active')
+    }
+
     const createDots = function (images) {
         images.forEach((image, index) => {
             const dot = document.createElement('button')
@@ -9,12 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
             dot.addEventListener('click', function (e) {
                 clearInterval(interval)
 
-                images[imageNumber].classList.add('hidden')
-                dots[imageNumber].classList.remove('active')
-
+                toggleClasses(imageNumber)
                 imageNumber = e.target.dataset.id
-                images[imageNumber].classList.remove('hidden')
-                dots[imageNumber].classList.add('active')
+                toggleClasses(imageNumber)
 
                 interval = setInterval(moveForward, 3000)
             })
@@ -23,20 +25,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const moveForward = function () {
-        images[imageNumber].classList.add('hidden')
-        dots[imageNumber].classList.remove('active')
+        toggleClasses(imageNumber)
 
         imageNumber++
-
         if (imageNumber > images.length - 1) {
             imageNumber = 0
         }
 
-        images[imageNumber].classList.remove('hidden')
-        dots[imageNumber].classList.add('active')
+        toggleClasses(imageNumber)
     }
 
-    // get elemenst
+    // get elements
     const slider = document.querySelector('.slider')
     const prevPictureButton = slider.querySelector('.btn--prevPicture')
     const nextPictureButton = slider.querySelector('.btn--nextPicture')
@@ -48,35 +47,22 @@ document.addEventListener('DOMContentLoaded', function () {
     let imageNumber = 0
 
     //set initial img for slider
-    // images[imageNumber].classList.add('visible')
     dots[imageNumber].classList.add('active')
 
+    //set interval for changing picture
     let interval = setInterval(moveForward, 3000)
 
     // events
     nextPictureButton.addEventListener('click', function () {
         clearInterval(interval)
-
-        images[imageNumber].classList.add('hidden')
-        dots[imageNumber].classList.remove('active')
-
-        imageNumber++
-
-        if (imageNumber > images.length - 1) {
-            imageNumber = 0
-        }
-
-        images[imageNumber].classList.remove('hidden')
-        dots[imageNumber].classList.add('active')
-
+        moveForward()
         interval = setInterval(moveForward, 3000)
     })
 
     prevPictureButton.addEventListener('click', function () {
         clearInterval(interval)
 
-        images[imageNumber].classList.add('hidden')
-        dots[imageNumber].classList.remove('active')
+        toggleClasses(imageNumber)
 
         imageNumber--
 
@@ -85,11 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
             images[0].classList.add('hidden')
         }
 
-        images[imageNumber].classList.remove('hidden')
-        dots[imageNumber].classList.add('active')
-
+        toggleClasses(imageNumber)
         interval = setInterval(moveForward, 3000)
     })
-
-
 })
