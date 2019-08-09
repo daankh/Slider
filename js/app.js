@@ -1,9 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
     // functions
     const createDots = function (images) {
-        images.forEach((image) => {
-            const dot = document.createElement('div')
+        images.forEach((image, index) => {
+            const dot = document.createElement('button')
+            dot.classList.add('btn')
             dot.classList.add('dot')
+            dot.dataset.id = index;
+            dot.addEventListener('click', function (e) {
+                clearInterval(interval)
+
+                images[imageNumber].classList.add('hidden')
+                dots[imageNumber].classList.remove('active')
+
+                imageNumber = e.target.dataset.id
+                images[imageNumber].classList.remove('hidden')
+                dots[imageNumber].classList.add('active')
+
+                interval = setInterval(moveForward, 3000)
+            })
             dotsContainer.appendChild(dot)
         })
     }
