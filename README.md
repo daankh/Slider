@@ -24,7 +24,7 @@ That project was made for training.
 
 
 
-## Install
+## Installation
 
 1. Download project on yor computer.
 2. Install node.js and npm.
