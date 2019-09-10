@@ -1,5 +1,6 @@
 # Slider
-Full responsive slider built using JavaScript and Sass
+Full responsive slider built using JavaScript and Sass.
+That project was made for training.
 
 ## Features
 
@@ -23,7 +24,7 @@ Full responsive slider built using JavaScript and Sass
 
 
 
-## Setup - if you want to use or made some changes in that project
+## Install
 
 1. Download project on yor computer.
 2. Install node.js and npm.
@@ -41,8 +42,11 @@ gulp watch
 gulp sass
 ```
 
+## Licence
 
+MIT License
 
+Copyright (c) 2019 Daniel Jarosz
 
 
 
